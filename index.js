@@ -27,11 +27,11 @@ app.use(
 );
 
 
-app.use('/api/v1/employee', EmployeeRoute);
+app.use('/api/v1/employee', checkToken, EmployeeRoute);
 
-app.use('/api/v1/profile', EmployeeProfile);
+app.use('/api/v1/profile',checkToken, EmployeeProfile);
 
-app.use('/api/v1/department', Department);
+app.use('/api/v1/department', checkToken, Department);
 
 app.use('/api/v1/login', LoginRoutes);
 
