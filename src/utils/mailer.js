@@ -1,4 +1,3 @@
-// Import Nodemailer
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const fs = require('fs');
@@ -37,7 +36,7 @@ async function sendWelcomeEmail({first_name, email, password }) {
         // Send email
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                return console.log('Error occurred:', error);
+                 console.log('Error occurred:', error);
             }
         });
 
