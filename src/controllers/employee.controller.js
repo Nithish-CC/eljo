@@ -83,15 +83,15 @@ exports.getEmployeeById = (req, res) => {
 
 exports.deleteEmployeeById = (req, res) => {
     const { id } = req.params;
-    deleteEmployeeByIdRepository(id, (Success, Employee) => {
+    deleteEmployeeByIdRepository(id, (Success, message) => {
         if (Success) {
             res.status(200).send({
-                message: Employee,
+                message: message,
                 success: true
             });
         } else {
             res.status(500).send({
-                message: "Failed to get employee list !",
+                message: message,
                 success: false
             });
         }

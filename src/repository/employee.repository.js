@@ -83,7 +83,7 @@ const deleteEmployeeByIdRepository = async (employeeId = '', result) => {
     if (employeeId !== '' && employeeId !== undefined) {
         try {
             const dbConn = await dbConnPromise;
-            let query = "DELETE FROM employee WHERE id = ? AND e.role = 'employee'";
+            let query = "DELETE FROM employee WHERE id = ? AND role = 'employee'";
             let params = [employeeId];
             const [results] = await dbConn.query(query, params);
             if (results.affectedRows > 0) {
